@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>kubik a naty love</title>
+    <style>
+        body {
+            background-color: rgb(0, 0, 0);
+        }
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 150px;
+            text-align: center;
+            color: rgb(106, 22, 185);
+        }
+        h2 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 50px;
+            text-align: center;
+            color: rgb(219, 171, 76);
+        }   
+     </style>
+</head>
+<body>
+    <h2 id="datum"></h2>
+    <h2 id="den_v_tydnu"></h2>
+    <h1> kubík a naty </h1>
+    <h2 id="pocet_dnu"></h2>
+<script>
+    const datum = new Date();
+    const dnyTydne = ["Neděle", "Pondělí", "Úterý", "Středa", "Čtvrtek", "Pátek", "Sobota"];
+    const denVTydnu = dnyTydne[datum.getDay()];
+    document.getElementById("datum").innerText = `Datum: ${datum.toLocaleDateString()}`;
+    document.getElementById("den_v_tydnu").innerText = `Den v týdnu: ${denVTydnu}`;
+    const urcitedatum = new Date("2023-03-05");
+    const rozdil = datum - urcitedatum
+    const pocetDnu = Math.floor(rozdil / (1000 * 60 * 60 * 24));
+    document.getElementById("pocet_dnu").innerText = `Počet dnů od určitého dne: ${pocetDnu}`;
+    </script>
+</body>
+</html>
